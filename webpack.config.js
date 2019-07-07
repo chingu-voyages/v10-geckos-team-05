@@ -2,6 +2,7 @@ var path = require('path');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: ['whatwg-fetch','./src/js/index.js'],
   output: {
     filename: 'bundle.min.js',

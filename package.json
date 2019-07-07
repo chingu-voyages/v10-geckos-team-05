@@ -1,0 +1,32 @@
+{
+  "name": "museum-api-call",
+  "version": "1.0.0",
+  "description": "Example of using the Node JavaScript WP API Client  - https://github.com/WP-API/node-wpapi",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --https",
+    "build": "webpack --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Melissa & Lisa",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "grunt": "^1.0.4",
+    "load-grunt-tasks": "^5.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^2.1.0",
+    "node-sass": "^4.12.0",
+    "uglifyjs-webpack-plugin": "^0.1.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.11.5"
+  },
+  "dependencies": {
+    "handle-thing": "^2.0.0",
+    "http-server": "^0.11.1",
+    "whatwg-fetch": "^2.0.2"
+  }
+}

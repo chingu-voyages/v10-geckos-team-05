@@ -1,0 +1,20 @@
+body {
+    background: $body-bg;
+    color: $body-color;
+    font-family: 'Quicksand', cursive;
+    font-size: 16px;
+}
+
+header {
+    padding: 3rem;
+    text-align: center;
+}
+
+#main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+}

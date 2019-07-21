@@ -6,7 +6,6 @@
  * The main router object.
  *
  */
-
 let router = {};
 
 /**

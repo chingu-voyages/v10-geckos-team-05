@@ -1,7 +1,6 @@
 /**
  * Model file for working with data
  */
-import config from './config';
 import data from './data';
 
 /**
@@ -16,19 +15,28 @@ let model = {};
  *
  */
 model.init = function() {
-    console.log( 'API root: ' + config.apiRoot );
-    console.log( 'API key: ' + config.apiKey );
+    data.init();
 }
 
 /**
- * renderData - Display called data
+ * renderData - returns the data from the fetch call
  *
  *  @return {Object} data
  */
-model.getObject = function( ) {
-    let dataObject = data;
+model.render = function( data ) {
+    let collection = data.records;
 
-    return dataObject;
+    console.log( collection );
+
+    for ( let item of collection ) {
+        console.log( 'division: ' + item.division );
+        console.log( 'year: ' + item.accessionyear );
+        console.log( 'century: ' + item.century );
+
+        for ( let image of item.images ) {
+            console.log( 'image url:' + image.baseimageurl + '?height=150&width=150' );
+        }
+    }
 };
 
 export default model;

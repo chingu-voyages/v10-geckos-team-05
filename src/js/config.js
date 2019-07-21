@@ -1,8 +1,8 @@
 import 'whatwg-fetch';
 
 let config = {
-  apiRoot: 'API Root URL (if call is via query string)',
-  apiKey: "The Key!",
+  apiRoot: 'https://api.harvardartmuseums.org/object?q=size=10&sort=random&hasimage=1&apikey=',
+  apiKey: '',
 };
 
 export default config;

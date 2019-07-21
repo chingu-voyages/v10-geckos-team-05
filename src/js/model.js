@@ -24,8 +24,19 @@ model.init = function() {
  *  @return {Object} data
  */
 model.render = function( data ) {
-    console.log( data );
-    console.log( data.info );
+    let collection = data.records;
+
+    console.log( collection );
+
+    for ( let item of collection ) {
+        console.log( 'division: ' + item.division );
+        console.log( 'year: ' + item.accessionyear );
+        console.log( 'century: ' + item.century );
+
+        for ( let image of item.images ) {
+            console.log( 'image url:' + image.baseimageurl + '?height=150&width=150' );
+        }
+    }
 };
 
 export default model;

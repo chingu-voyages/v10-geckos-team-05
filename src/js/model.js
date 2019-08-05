@@ -31,9 +31,6 @@ model.render = function( data ) {
     let collection = data.records;
     let sizeString = '?height=600&width=600';
 
-    console.log( collection );
-
-    // TODO: If image array is 0, new result
     for ( let item of collection ) {
 
         if ( item.images === undefined || item.images.length == 0 ) {
@@ -42,11 +39,10 @@ model.render = function( data ) {
         }
 
         let painting = item.images[0].baseimageurl + sizeString;
-        view.displayImage( painting );
-
         let credit = item.creditline;
         let description = item.title;
-
+        
+        view.displayImage( painting );
         view.addAltTag( credit );
         view.displayDescription( description );
     }  

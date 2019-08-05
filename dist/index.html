@@ -12,30 +12,32 @@
 </head>
 <body>
   <div class="container my-5 mx-auto text-center">
-    <h1 class="text-muted text-center my-5">First Impressions App</h1>
-    <h4 class = "text-muted text-center my-5">Discover Paintings from the Harvard Art Museum  </h4>
-    <h4 class = "text-muted text-center my-1">Then, Share Your Impressions</h4>
+    <h1>First Impressions</h1>
+    <p>Discover Paintings from the Harvard Art Museum, Share Your Impressions</p>
     <button type="button" class="btn btn-secondary my-5 btn-lg" id='discoverBtn'>Discover Paintings</button>
-    <div class="card shadow-lg rounded" id ="imageCard">
-      <img src="https://via.placeholder.com/200x150" class="painting card-img-top" alt="painting" id="museumImage">
+
+    <div id="imageCard">
+      <img src="https://via.placeholder.com/400x400" alt="Painting Harvard Museum" id="museumImage">
+      <h3 id="title"></h3>
     </div>
+
     <form>
       <div class="form-group my-2 center">
         <label for="comment" class="text-muted my-5"></label>
         <textarea class = "form-control" id="comment" rows ="10" placeholder ="Share your ideas here"></textarea>
         <button class= "btn btn-outline-secondary my-2" id = "submit">
-         submit
+         Submit
         </button>
       </div>
     </form>
     <div class ="card shadow-lg rounded my-5 text-center text-muted">
-      <h6 class="text-muted text-center my-5">Your impressions</h2>
+      <h6 class="text-muted text-center my-5">Your impression</h2>
       <ul>
         <li id ="commentSaved"></li>
         <li></li>
       </ul>
     </div>
 </div>
-<script src ="index.js"></script>
+<script src ="bundle.min.js"></script>
 </body>
 </html>

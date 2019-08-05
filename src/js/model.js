@@ -2,12 +2,13 @@
  * Model file for working with data
  */
 import data from './data';
+import helpers from './helpers';
+import view from './view';
 
 /**
  * Main Model Object
  *
  */
-
 let model = {};
 
 /**
@@ -16,6 +17,9 @@ let model = {};
  */
 model.init = function() {
     data.init();
+    model.discoverPaintings();
+    data.firebaseInit();
+    model.submitForm();
 }
 
 /**
@@ -25,18 +29,57 @@ model.init = function() {
  */
 model.render = function( data ) {
     let collection = data.records;
+    let sizeString = '?height=600&width=600';
 
     console.log( collection );
 
+    // TODO: If image array is 0, new result
     for ( let item of collection ) {
-        console.log( 'division: ' + item.division );
-        console.log( 'year: ' + item.accessionyear );
-        console.log( 'century: ' + item.century );
+        let credit = item.creditline;
+        let painting = item.images[0].baseimageurl + sizeString;
+        let description = item.title;
 
-        for ( let image of item.images ) {
-            console.log( 'image url:' + image.baseimageurl + '?height=150&width=150' );
-        }
+        view.addAltTag( credit );
+        view.displayImage( painting );
+        view.displayDescription( description );
     }
 };
+
+/**
+ * discoverPaintings - event listener to pull new painting
+ */
+model.discoverPaintings = function( ) {
+    let discoverBtn = document.getElementById( 'discoverBtn' );
+    discoverBtn.addEventListener( 'click', view.reloadImage );
+};
+
+/**
+ * submitForm - event listener to process impressions
+ */
+model.submitForm = function( ) {
+    let submitButton = document.querySelector( '#submit' );
+    submitButton.addEventListener( 'click', model.processForm );
+};
+
+/**
+ * processForm - push the data to the database
+ */
+model.processForm = function( e ) {
+    e.preventDefault();
+    
+    let firestore = firebase.firestore();
+    let docRef = firestore.doc( 'impressions/testDoc' );
+    let commentEl = helpers.getCommentEl();
+    let commentToSave = commentEl.value;
+
+    docRef.set({
+        comment: commentToSave
+    }).catch(function(err){
+        console.log( 'Error!' );
+    });
+
+    view.displayImpression( commentToSave, docRef );
+};
+
 
 export default model;

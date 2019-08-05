@@ -35,14 +35,21 @@ model.render = function( data ) {
 
     // TODO: If image array is 0, new result
     for ( let item of collection ) {
-        let credit = item.creditline;
+
+        if ( item.images === undefined || item.images.length == 0 ) {
+            view.clearData();
+            data.init();
+        }
+
         let painting = item.images[0].baseimageurl + sizeString;
+        view.displayImage( painting );
+
+        let credit = item.creditline;
         let description = item.title;
 
         view.addAltTag( credit );
-        view.displayImage( painting );
         view.displayDescription( description );
-    }
+    }  
 };
 
 /**

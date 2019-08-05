@@ -4,40 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel= "stylesheet" href="styles.css">
   <title>First Impressions</title>
-  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
 </head>
 <body>
-  <div class="container my-5 mx-auto text-center">
-    <h1>First Impressions</h1>
-    <p>Discover Paintings from the Harvard Art Museum, Share Your Impressions</p>
-    <button type="button" class="btn btn-secondary my-5 btn-lg" id='discoverBtn'>Discover Paintings</button>
+
+  <section id="main">
+    <div class="intro">
+      <h1>First Impressions</h1>
+      <h2>Discover Paintings from the Harvard Art Museum</h2>
+      <button type="button" class="btn btn-lg" id="discoverBtn">Discover Paintings</button>
+    </div>
 
     <div id="imageCard">
       <img src="https://via.placeholder.com/400x400" alt="Painting Harvard Museum" id="museumImage">
       <h3 id="title"></h3>
     </div>
 
-    <form>
-      <div class="form-group my-2 center">
-        <label for="comment" class="text-muted my-5"></label>
-        <textarea class = "form-control" id="comment" rows ="10" placeholder ="Share your ideas here"></textarea>
-        <button class= "btn btn-outline-secondary my-2" id = "submit">
-         Submit
-        </button>
+    <div class="collect-data">
+      <form>
+          <label for="comment">Share your impression</label>
+          <textarea class = "form-control" id="comment" rows="6" placeholder ="Share your thoughts here"></textarea>
+          <button class="btn btn-sm" id="submit">Submit</button>
+      </form>
+
+      <div class="impression-box">
+        <h4>Your Impression</h4>
+        <p id="commentSaved"></p>
       </div>
-    </form>
-    <div class ="card shadow-lg rounded my-5 text-center text-muted">
-      <h6 class="text-muted text-center my-5">Your impression</h2>
-      <ul>
-        <li id ="commentSaved"></li>
-        <li></li>
-      </ul>
     </div>
-</div>
-<script src ="bundle.min.js"></script>
+
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+  <script src ="bundle.min.js"></script>
 </body>
 </html>

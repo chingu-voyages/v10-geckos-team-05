@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
 let config = {
-  apiRoot: 'https://api.harvardartmuseums.org/object?q=size=10&sort=random&hasimage=1&apikey=',
+  apiRoot: 'https://api.harvardartmuseums.org/object?q=classification:Painting&size=1&&sort=random&hasimage=1&apikey=',
   apiKey: '',
 };
 

@@ -1,6 +1,7 @@
 import model from './model';
 import router from './router';
 import view from './view';
+import data from './data';
 
 /**
   * Main app object
@@ -15,7 +16,7 @@ let app = {};
 app.init = function() {
 	model.init();
 	router.init();
-	view.init();
+  view.init();
 };
 
 app.init();

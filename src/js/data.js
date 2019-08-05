@@ -1,13 +1,25 @@
 import config from './config';
 import model from './model';
 
-let searchParam = ''; // will come from the controller (router) eventually
-
 /**
   * Main data object
   *
   */
  let data = {};
+
+/**
+  * Firebase app specifications
+  *
+  */
+ var firebaseConfig = {
+    apiKey: "AIzaSyDRi3srKe7hNPvW31HZWzklUEtw0HPSTXo",
+    authDomain: "impressions-prototype.firebaseapp.com",
+    databaseURL: "https://impressions-prototype.firebaseio.com",
+    projectId: "impressions-prototype",
+    storageBucket: "impressions-prototype.appspot.com",
+    messagingSenderId: "1092943872445",
+    appId: "1:1092943872445:web:413024422bce97b6"
+  };
 
  /**
    * Calls initial data methods
@@ -22,8 +34,8 @@ let searchParam = ''; // will come from the controller (router) eventually
  *
  * @return {Object} data
  */
-data.fetchData = function () {
-    fetch( config.apiRoot + searchParam + config.apiKey )
+ data.fetchData = function () {
+    fetch( config.apiRoot + config.apiKey )
     .then( response => {
         if ( response.status !== 200 ) {
             console.log( 'Problem! Status Code: ' + response.status );
@@ -38,6 +50,15 @@ data.fetchData = function () {
     .catch( function( err ) {
         console.log( 'Error: ', err );
     });
+ }
+
+/**
+ * firebaseInit - Initialize the firebase db
+ *
+ * @return {Object} firestore
+ */
+data.firebaseInit = function () {
+  firebase.initializeApp( firebaseConfig ); 
 }
 
 export default data;

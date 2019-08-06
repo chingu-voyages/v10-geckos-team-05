@@ -15,22 +15,36 @@ let view = {};
   */
 
 view.init = function () {
-  let museumImage = document.getElementById( 'museumImage' );
+
 }
 
 /**
  * displayImage - replaces the placeholder and adds image to page
  */
 view.displayImage = function( painting ) {
+  let museumImage = helpers.getMuseumImg();
+
   museumImage.setAttribute( 'src', painting );
 };
 
 /**
- * displayImage - replaces the placeholder and adds image to page
+ * addAltTag - replaces the placeholder alt tag
  */
 view.addAltTag = function( credit ) {
+  let museumImage = helpers.getMuseumImg();
+
   museumImage.setAttribute( 'alt', credit );
 };
+
+/**
+ * addImageSrc - replaces the placeholder image source
+ */
+view.addImageSrc = function( imgSrc ) {
+  let imgLink = document.getElementById( 'imageSrc' );
+
+  imgLink.setAttribute( 'href', imgSrc );
+};
+
 
 /**
  * reloadImage - serves a new image by reloading the fetch

@@ -44,8 +44,8 @@ import model from './model';
 
         return response.json();
     })
-    .then ( data => {
-        model.render( data );
+    .then ( theData => {
+        model.render( theData );
     })
     .catch( function( err ) {
         console.log( 'Error: ', err );

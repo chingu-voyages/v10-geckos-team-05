@@ -27,23 +27,25 @@ model.init = function() {
  *
  *  @return {Object} data
  */
-model.render = function( data ) {
-    let collection = data.records;
+model.render = function( theData ) {
+    let collection = theData.records;
     let sizeString = '?height=600&width=600';
 
     for ( let item of collection ) {
 
         if ( item.images === undefined || item.images.length == 0 ) {
             view.clearData();
-            data.init();
+            data.fetchData();
         }
 
         let painting = item.images[0].baseimageurl + sizeString;
         let credit = item.creditline;
         let description = item.title;
-        
+        let imgSrc = item.url;
+
         view.displayImage( painting );
         view.addAltTag( credit );
+        view.addImageSrc( imgSrc );
         view.displayDescription( description );
     }  
 };

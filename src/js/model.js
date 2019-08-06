@@ -35,15 +35,17 @@ model.render = function( data ) {
 
         if ( item.images === undefined || item.images.length == 0 ) {
             view.clearData();
-            data.init();
+            model.fetchData();
         }
 
         let painting = item.images[0].baseimageurl + sizeString;
         let credit = item.creditline;
         let description = item.title;
-        
+        let imgSrc = item.url;
+
         view.displayImage( painting );
         view.addAltTag( credit );
+        view.addImageSrc( imgSrc );
         view.displayDescription( description );
     }  
 };

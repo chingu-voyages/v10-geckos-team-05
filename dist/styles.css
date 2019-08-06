@@ -90,6 +90,14 @@ header {
   flex-wrap: wrap;
 }
 
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: .8rem;
+}
+
 .intro,
 #imageCard {
   text-align: center;
@@ -237,15 +245,26 @@ form textarea:hover, form textarea:focus {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 600;
   color: #111;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 h3, form label {
   font-size: 1.3rem;
+  color: #111;
+}
+
+a {
+  text-decoration: none;
+  color: #37353d;
+  transition: .5s;
+}
+
+a:hover, a:focus {
+  color: #817d8e;
 }

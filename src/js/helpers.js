@@ -12,5 +12,9 @@ helpers.getCommentOutput = function() {
     return document.querySelector( '#commentSaved' );
 }
 
+helpers.getMuseumImg = function() {
+    return document.getElementById( 'museumImage' );
+}
+
 export default helpers;
  

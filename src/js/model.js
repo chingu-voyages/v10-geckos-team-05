@@ -27,15 +27,15 @@ model.init = function() {
  *
  *  @return {Object} data
  */
-model.render = function( data ) {
-    let collection = data.records;
+model.render = function( theData ) {
+    let collection = theData.records;
     let sizeString = '?height=600&width=600';
 
     for ( let item of collection ) {
 
         if ( item.images === undefined || item.images.length == 0 ) {
             view.clearData();
-            model.fetchData();
+            data.fetchData();
         }
 
         let painting = item.images[0].baseimageurl + sizeString;

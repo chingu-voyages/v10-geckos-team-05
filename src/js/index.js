@@ -16,7 +16,7 @@ let app = {};
 app.init = function() {
 	model.init();
 	router.init();
-  view.init();
+	view.init();
 };
 
 app.init();

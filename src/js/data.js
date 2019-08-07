@@ -11,8 +11,8 @@ import model from './model';
   * Firebase app specifications
   *
   */
- var firebaseConfig = {
-    apiKey: "AIzaSyDRi3srKe7hNPvW31HZWzklUEtw0HPSTXo",
+ let firebaseConfig = {
+    apiKey: "",
     authDomain: "impressions-prototype.firebaseapp.com",
     databaseURL: "https://impressions-prototype.firebaseio.com",
     projectId: "impressions-prototype",
